@@ -138,6 +138,56 @@ if ($infoCurl['http_code'] != 200) {
 
             </select>
 		</div>
+<div style="padding-top:7px;">Sauvegarder pour mettre à jour le type de contrat.</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label">{{Type de contrat}}</label>
+        <div class="col-sm-3">
+<?php
+$_APILoginUrl = 'https://consospyapi.sicame.io/api';
+$_api = trim(config::byKey('APIKey', 'eesmart'));
+$_idmodule = $eqLogic->getConfiguration('idmodule');
+if ($_idmodule == '' || $_idmodule == 'none') {
+	//mettre une alerte sur "L\'identifiant du module ne peut être vide"
+} else {
+  	/* Connexion */
+  	$infoCurl = null; // Pour récupérer les info curl
+  	$headers = array();
+  	$headers[] = 'Accept: application/json';
+  	$headers[] = 'Content-Type: application/json';
+  	$headers[] = 'APIKey: '. $_api;
+  	$action = 'GET';
+  	$postfields = null; // Pour éviter plantage
+
+  	$curl = curl_init(); // Première étape, initialiser une nouvelle session cURL.
+  	curl_setopt($curl, CURLOPT_URL, $_APILoginUrl.'/D2L/D2Ls/'.$_idmodule.'/TypeContrat'); // Il va par exemple falloir lui fournir l'url de la page à récupérer.
+  	curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
+  	if ($action == 'GET') {
+    	curl_setopt($curl, CURLOPT_HTTPGET, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
+  	} elseif ($action == 'POST') {
+    	curl_setopt($curl, CURLOPT_POST, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
+    	curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
+  	}
+  	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); // Cette option permet d'indiquer que nous voulons recevoir le résultat du transfert au lieu de l'afficher.
+  	$return = curl_exec($curl); // Il suffit ensuite d'exécuter la requête
+  	$infoCurl = curl_getinfo($curl); // Récupération des infos curl
+  	curl_close($curl);
+  	if ($infoCurl['http_code'] != 200) { // Traitement des erreurs
+    	return "Couple identifiant / mot de passe incorrect";
+  	} else {
+		$eqLogic->setConfiguration("typecontrat",$return);
+		$eqLogic->save();
+		if ($return == '"BASE"') {$return = "Contrat de base";};
+      	if ($return == '"HEURE_CREUSE_HEURE_PLEINE"') {$return = "Contrat HCHP";};
+		if ($return == '"EJP"') {$return = "Contrat EJP";};
+      	if ($return == '"TEMPO"') {$return = "Contrat Tempo";};
+		$eqLogic->setConfiguration("typecontrat_libelle",$return);
+		$eqLogic->save();
+		echo '<div style="padding-top:7px;">'.$return.'</div>';
+  	}
+}
+?>
+		</div>
 	</div>
 </fieldset>
 </form>

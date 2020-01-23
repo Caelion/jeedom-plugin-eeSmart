@@ -109,10 +109,36 @@ class eesmart extends eqLogic {
 		$info->setSubType('string');
 		$info->save();
 
+		$info = $this->getCmd(null, 'indexTotal');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Total', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexTotal');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexBase');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Base', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexBase');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
 		$info = $this->getCmd(null, 'indexHC');
 		if (!is_object($info)) {
 			$info = new eesmartCmd();
-			$info->setName(__('Index Heures Creuses', __FILE__));
+			$info->setName(__('Index HCHP - Heures Creuses', __FILE__));
 		}
 		$info->setUnite('kWh');
 		$info->setIsHistorized(true);
@@ -125,7 +151,7 @@ class eesmart extends eqLogic {
       	$info = $this->getCmd(null, 'indexHP');
 		if (!is_object($info)) {
 			$info = new eesmartCmd();
-			$info->setName(__('Index Heures Pleines', __FILE__));
+			$info->setName(__('Index HCHP - Heures Pleines', __FILE__));
 		}
 		$info->setUnite('kWh');
 		$info->setIsHistorized(true);
@@ -134,6 +160,208 @@ class eesmart extends eqLogic {
 		$info->setType('info');
 		$info->setSubType('numeric');
 		$info->save();
+
+		$info = $this->getCmd(null, 'indexHN');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index EJP - Heures Normales', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHN');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHPl');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index EJP - Heures Pleines', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHPl');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHCJB');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Tempo - Heures Creuses - Jours Bleus', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHCJB');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHPJB');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Tempo - Heures Pleines - Jours Bleus', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHPJB');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHCJW');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Tempo - Heures Creuses - Jours Blancs', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHCJW');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHPJW');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Tempo - Heures Pleines - Jours Blancs', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHPJW');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHCJR');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Tempo - Heures Creuses - Jours Rouges', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHCJR');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'indexHPJR');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Index Tempo - Heures Pleines - Jours Rouges', __FILE__));
+		}
+		$info->setUnite('kWh');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('indexHPJR');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'intensite');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Intensité totale', __FILE__));
+		}
+		$info->setUnite('A');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('intensite');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'intensite1');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Intensité - Phase 1', __FILE__));
+		}
+		$info->setUnite('A');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('intensite1');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+      	$info = $this->getCmd(null, 'intensite2');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Intensité - Phase 2', __FILE__));
+		}
+		$info->setUnite('A');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('intensite2');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+		$info = $this->getCmd(null, 'intensite3');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Intensité - Phase 3', __FILE__));
+		}
+		$info->setUnite('A');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('intensite3');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->save();
+
+      	$typecontrat = $this->getConfiguration('typecontrat_libelle');
+		if ($typecontrat != '' && $typecontrat != 'none') {
+			if ($typecontrat != 'Contrat de base') {
+				$info = $this->getCmd(null, 'indexBase');
+				$info->setIsVisible(false);
+              	$info->save();
+            }
+			if ($typecontrat != 'Contrat HCHP') {
+				$info = $this->getCmd(null, 'indexHC');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHP');
+				$info->setIsVisible(false);
+              	$info->save();
+            }
+			if ($typecontrat != 'Contrat EJP') {
+				$info = $this->getCmd(null, 'indexHN');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHPl');
+				$info->setIsVisible(false);
+              	$info->save();
+            }
+			if ($typecontrat != 'Contrat Tempo') {
+				$info = $this->getCmd(null, 'indexHCJB');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHPJB');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHCJW');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHPJW');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHCJR');
+				$info->setIsVisible(false);
+              	$info->save();
+				$info = $this->getCmd(null, 'indexHPJR');
+				$info->setIsVisible(false);
+              	$info->save();
+            }
+		}
+
     }
 
     public function preUpdate() {
@@ -152,112 +380,7 @@ class eesmart extends eqLogic {
         //log::add('eesmart', 'debug', 'Exécution de la fonction postRemove');
     }
 
-    public function eesmart_API() {//non utilisé : en direct dans la page de la configuration du plugin
-        $_login = trim(config::byKey('identifiant', 'eesmart'));
-        $_password = trim(config::byKey('motdepasse', 'eesmart'));
-	/* Connexion */
-		$infoCurl = null; // Pour récupérer les info curl
-		$headers = array();
-			$headers[] = 'Accept: application/json';
-			$headers[] = 'Content-Type: application/json';
-		$action = 'POST';
-		$postfields = '{"login":"'.$_login.'","password":"'.$_password.'"}';
-
-		$curl = curl_init(); // Première étape, initialiser une nouvelle session cURL.
-		curl_setopt($curl, CURLOPT_URL, $this->_APILoginUrl.'/D2L/Security/GetAPIKey'); // Il va par exemple falloir lui fournir l'url de la page à récupérer.
-		curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
-		if ($action == 'GET') {
-			curl_setopt($curl, CURLOPT_HTTPGET, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-		} elseif ($action == 'POST') {
-			curl_setopt($curl, CURLOPT_POST, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-			curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
-		}
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); // Cette option permet d'indiquer que nous voulons recevoir le résultat du transfert au lieu de l'afficher.
-
-		$return = curl_exec($curl); // Il suffit ensuite d'exécuter la requête
-		$infoCurl = curl_getinfo($curl); // Récupération des infos curl
-		curl_close($curl);
-//return $infoCurl['http_code'] != 200;
-	/* Parse du résultat*/
-		if ($infoCurl['http_code'] != 200) {
-			return "Couple identifiant / mot de passe incorrect";
-		} else {
-			$params = json_decode($return,true);
-			return $params['apiKey'];
-        }
-     }
-
-    public function eesmart_liste_modules_D2L() {//non utilisé : en direct dans la page de la configuration du module
-		$_api = trim(config::byKey('APIKey', 'eesmart'));
-	/* Connexion */
-		$infoCurl = null; // Pour récupérer les info curl
-		$headers = array();
-			$headers[] = 'Accept: application/json';
-			$headers[] = 'Content-Type: application/json';
-      		$headers[] = 'APIKey: '. $_api;
-		$action = 'GET';
-		$postfields = null; // Pour éviter plantage
-
-		$curl = curl_init(); // Première étape, initialiser une nouvelle session cURL.
-		curl_setopt($curl, CURLOPT_URL, $this->_APILoginUrl.'/D2L/D2Ls'); // Il va par exemple falloir lui fournir l'url de la page à récupérer.
-		curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
-		if ($action == 'GET') {
-			curl_setopt($curl, CURLOPT_HTTPGET, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-		} elseif ($action == 'POST') {
-			curl_setopt($curl, CURLOPT_POST, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-			curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
-		}
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); // Cette option permet d'indiquer que nous voulons recevoir le résultat du transfert au lieu de l'afficher.
-		$return = curl_exec($curl); // Il suffit ensuite d'exécuter la requête
-		$infoCurl = curl_getinfo($curl); // Récupération des infos curl
-		curl_close($curl);
-	/* Parse du résultat*/
-		if ($infoCurl['http_code'] != 200) {
-			return "Couple identifiant / mot de passe incorrect";
-		} else {
-			$params = json_decode($return,true);
-			$nbid = count($params);
-			return $params[1]['idModule'];
-        }
-     }
-
-    public function eesmart_type_contrat() {
-		$_api = trim(config::byKey('APIKey', 'eesmart'));
-		if ($this->getConfiguration('idmodule') == '') {
-			throw new Exception(__('L\'identifiant du module ne peut être vide', __FILE__));
-		} else {
-            $_idmodule = $this->getConfiguration('idmodule');
-        /* Connexion */
-            $infoCurl = null; // Pour récupérer les info curl
-            $headers = array();
-                $headers[] = 'Accept: application/json';
-                $headers[] = 'Content-Type: application/json';
-                $headers[] = 'APIKey: '. $_api;
-            $action = 'GET';
-            $postfields = null; // Pour éviter plantage
-
-            $curl = curl_init(); // Première étape, initialiser une nouvelle session cURL.
-            curl_setopt($curl, CURLOPT_URL, $this->_APILoginUrl.'/D2L/D2Ls/'.$_idmodule.'/TypeContrat'); // Il va par exemple falloir lui fournir l'url de la page à récupérer.
-            curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
-            if ($action == 'GET') {
-                curl_setopt($curl, CURLOPT_HTTPGET, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-            } elseif ($action == 'POST') {
-                curl_setopt($curl, CURLOPT_POST, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
-            }
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); // Cette option permet d'indiquer que nous voulons recevoir le résultat du transfert au lieu de l'afficher.
-            $return = curl_exec($curl); // Il suffit ensuite d'exécuter la requête
-            $infoCurl = curl_getinfo($curl); // Récupération des infos curl
-            curl_close($curl);
-            if ($infoCurl['http_code'] != 200) { // Traitement des erreurs
-                return "Couple identifiant / mot de passe incorrect";
-            } else {
-                return $return;
-            }
-		}
-    }
-
-    public function eesmart_last_index_HC() {
+    public function eesmart_last_indexes() {
 		$_api = trim(config::byKey('APIKey', 'eesmart'));
 		if ($this->getConfiguration('idmodule') == '') {
 			throw new Exception(__('L\'identifiant du module ne peut être vide', __FILE__));
@@ -289,12 +412,12 @@ class eesmart extends eqLogic {
                 return "Couple identifiant / mot de passe incorrect";
             } else {
 				$params = json_decode($return,true);
-				return $params['baseHchcEjphnBbrhcjb'];
+				return $params;
             }
 		}
      }
 
-    public function eesmart_last_index_HP() {
+    public function eesmart_last_currents() {
 		$_api = trim(config::byKey('APIKey', 'eesmart'));
 		if ($this->getConfiguration('idmodule') == '') {
 			throw new Exception(__('L\'identifiant du module ne peut être vide', __FILE__));
@@ -310,7 +433,7 @@ class eesmart extends eqLogic {
             $postfields = null; // Pour éviter plantage
 
             $curl = curl_init(); // Première étape, initialiser une nouvelle session cURL.
-            curl_setopt($curl, CURLOPT_URL, $this->_APILoginUrl.'/D2L/D2Ls/'.$_idmodule.'/LastIndexes'); // Il va par exemple falloir lui fournir l'url de la page à récupérer.
+            curl_setopt($curl, CURLOPT_URL, $this->_APILoginUrl.'/D2L/D2Ls/'.$_idmodule.'/LastCurrents'); // Il va par exemple falloir lui fournir l'url de la page à récupérer.
             curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
             if ($action == 'GET') {
                 curl_setopt($curl, CURLOPT_HTTPGET, true); // Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
@@ -326,7 +449,7 @@ class eesmart extends eqLogic {
                 return "Couple identifiant / mot de passe incorrect";
             } else {
 				$params = json_decode($return,true);
-				return $params['hchpEjphpmBbrhpjb'];
+				return $params;
             }
 		}
      }
@@ -362,25 +485,35 @@ class eesmartCmd extends cmd {
 
     /*     * *********************Methode d'instance************************* */
 
-    /*
-     * Non obligatoire permet de demander de ne pas supprimer les commandes même si elles ne sont pas dans la nouvelle configuration de l'équipement envoyé en JS
+    /* Non obligatoire permet de demander de ne pas supprimer les commandes même si elles ne sont pas dans la nouvelle configuration de l'équipement envoyé en JS */
       public function dontRemoveCmd() {
-      return true;
+		return true;
       }
-     */
 
     public function execute($_options = array()) {
 		$eqlogic = $this->getEqLogic(); // récupère l'éqlogic de la commande $this
 		switch ($this->getLogicalId()) { // vérifie le logicalid de la commande
 			case 'refresh': // LogicalId de la commande rafraîchir que l’on a créé dans la méthode Postsave de la classe eesmart.
-			$info = $eqlogic->eesmart_type_contrat(); // On lance la fonction eesmartauth() pour récupérer l'api et on la stocke dans la variable $info
-			$eqlogic->checkAndUpdateCmd('typecontrat', $info); // on met à jour la commande avec le LogicalId "story" de l'eqlogic 
+			$eqlogic->checkAndUpdateCmd('typecontrat', $eqlogic->getConfiguration('typecontrat_libelle')); // on met à jour la commande typecontrat avec la valeur de la clé de configuration typecontrat
             $info = "";
-			$info = $eqlogic->eesmart_last_index_HC(); // On lance la fonction eesmartauth() pour récupérer l'api et on la stocke dans la variable $info
-			$eqlogic->checkAndUpdateCmd('indexHC', $info); // on met à jour la commande avec le LogicalId "story" de l'eqlogic 
-            $info = "";
-			$info = $eqlogic->eesmart_last_index_HP(); // On lance la fonction eesmartauth() pour récupérer l'api et on la stocke dans la variable $info
-			$eqlogic->checkAndUpdateCmd('indexHP', $info); // on met à jour la commande avec le LogicalId "story" de l'eqlogic 
+			$info = $eqlogic->eesmart_last_indexes(); // On lance la fonction eesmart_last_indexes() pour récupérer l'api et on la stocke dans la variable $info
+			$eqlogic->checkAndUpdateCmd('indexTotal', ($info['baseHchcEjphnBbrhcjb']+$info['hchpEjphpmBbrhpjb']+$info['bbrhcjw']+$info['bbrhpjw']+$info['bbrhcjr']+$info['bbrhpjr'])/1000); // on met à jour la commande avec le LogicalId "indexTotal" de l'eqlogic
+            $eqlogic->checkAndUpdateCmd('indexBase', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexBase" de l'eqlogic
+            $eqlogic->checkAndUpdateCmd('indexHC', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexHC" de l'eqlogic
+            $eqlogic->checkAndUpdateCmd('indexHP', $info['hchpEjphpmBbrhpjb']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHN', $info['baseHchcEjphnBbrhcjb']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHPl', $info['hchpEjphpmBbrhpjb']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHCJB', $info['baseHchcEjphnBbrhcjb']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHPJB', $info['hchpEjphpmBbrhpjb']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHCJW', $info['bbrhcjw']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHPJW', $info['bbrhpjw']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHCJR', $info['bbrhcjr']/1000);
+            $eqlogic->checkAndUpdateCmd('indexHPJR', $info['bbrhpjr']/1000);
+			$info = $eqlogic->eesmart_last_currents(); // On lance la fonction eesmart_last_currents() pour récupérer l'api et on la stocke dans la variable $info
+            $eqlogic->checkAndUpdateCmd('intensite1', $info['iinst1']);
+            $eqlogic->checkAndUpdateCmd('intensite2', $info['iinst2']);
+            $eqlogic->checkAndUpdateCmd('intensite3', $info['iinst3']);
+            $eqlogic->checkAndUpdateCmd('intensite', $info['iinst1']+$info['iinst2']+$info['iinst3']);
 			break;
 		}
     }

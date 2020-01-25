@@ -5,6 +5,7 @@
 	"licence" : "AGPL",
 	"author" : "Caelion",
 	"require" : "3.3.39",
+	"version" : "0.3",
 	"category" : "energy",
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,

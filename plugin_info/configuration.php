@@ -40,38 +40,39 @@ if (!isConnect()) {
             <label class="col-lg-4 control-label">{{Clé API}}</label>
             <div class="col-lg-6">
                 <input class="configKey form-control" data-l1key="APIKey" disabled/><?php
-/* Configuration */
 $_login = trim(config::byKey('identifiant', 'eesmart'));
 $_password = trim(config::byKey('motdepasse', 'eesmart'));
-$_isAuth = false;
-$_APILoginUrl = 'https://consospyapi.sicame.io/api';
-$_APIHost = 'sicame.io';
-/* Connexion */
-$infoCurl = null; // Pour récupérer les info curl
-$postfields = '{"login":"'.$_login.'","password":"'.$_password.'"}';
-$headers = array();
-$headers[] = 'Accept: application/json';
-$headers[] = 'Content-Type: application/json';
-
-$curl = curl_init(); //Première étape, initialiser une nouvelle session cURL.
-$action = 'POST';
-curl_setopt($curl, CURLOPT_URL, $_APILoginUrl.'/D2L/Security/GetAPIKey'); //Il va par exemple falloir lui fournir l'url de la page à récupérer.
-if ($action == 'GET') {
-    curl_setopt($curl, CURLOPT_HTTPGET, true); //Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-} elseif ($action == 'POST') {
-    curl_setopt($curl, CURLOPT_POST, true); //Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
-}
-curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); //Cette option permet d'indiquer que nous voulons recevoir le résultat du transfert au lieu de l'afficher.
-$return = curl_exec($curl); //Il suffit ensuite d'exécuter la requête
-$infoCurl = curl_getinfo($curl); //recupération des infos curl
-curl_close($curl);
-$params = json_decode($return,true);
-if ($params['apiKey'] != "") {
-	config::save('APIKey', $params['apiKey'], 'eesmart');
-} else {
-    config::save('APIKey', 'identifiant / mot de passe incorrect(s)', 'eesmart');
+if ($_login != '' && $_password != ''){
+	/* Paramètres de connexion */
+	$_APILoginUrl = 'https://consospyapi.sicame.io/api';
+	$_APIHost = 'sicame.io';
+	$infoCurl = null; // Pour récupérer les info curl
+	$postfields = '{"login":"'.$_login.'","password":"'.$_password.'"}';
+	$headers = array();
+		$headers[] = 'Accept: application/json';
+		$headers[] = 'Content-Type: application/json';
+	/* Connexion */
+	$curl = curl_init(); //Première étape, initialiser une nouvelle session cURL.
+	$action = 'POST';
+	curl_setopt($curl, CURLOPT_URL, $_APILoginUrl.'/D2L/Security/GetAPIKey'); //Il va par exemple falloir lui fournir l'url de la page à récupérer.
+	if ($action == 'GET') {
+    	curl_setopt($curl, CURLOPT_HTTPGET, true); //Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
+	} elseif ($action == 'POST') {
+    	curl_setopt($curl, CURLOPT_POST, true); //Pour envoyer une requête POST, il va alors tout d'abord dire à la fonction de faire un HTTP POST
+    	curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
+	}
+	curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); //Cette option permet d'indiquer que nous voulons recevoir le résultat du transfert au lieu de l'afficher.
+	$return = curl_exec($curl); //Il suffit ensuite d'exécuter la requête
+	$infoCurl = curl_getinfo($curl); //recupération des infos curl
+	curl_close($curl);
+	/* Analyse du résultat */
+	$params = json_decode($return,true);
+	if ($params['apiKey'] != "") {
+		config::save('APIKey', $params['apiKey'], 'eesmart');
+	} else {
+    	config::save('APIKey', 'identifiant / mot de passe incorrect(s)', 'eesmart');
+	}
 }
 ?>
 Rafraichir la page pour vérifier la correcte saisie des identifiants.

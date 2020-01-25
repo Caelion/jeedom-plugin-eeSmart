@@ -12,10 +12,6 @@
 	"maxDependancyInstallTime" : 0,
 	"changelog" : "https://github.com/Caelion/jeedom_eesmart_d2l/wiki/Changelog",
 	"documentation" : "https://github.com/Caelion/jeedom_eesmart_d2l/wiki/Présentation",
-	"link" : {
-		"forum":"Lien vers le forum",
-		"video" : "Lien vers une video"
-	},
 	"language" : ["fr_FR","en_US","de_DE","sp_SP","ru_RU","id_ID","it_IT"],
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
 }

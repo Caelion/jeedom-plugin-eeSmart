@@ -10,8 +10,8 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"changelog" : "https://github.com/Caelion/jeedom_eesmart_d2l",
-	"documentation" : "https://github.com/Caelion/jeedom_eesmart_d2l",
+	"changelog" : "https://github.com/Caelion/jeedom_eesmart_d2l/wiki/Changelog",
+	"documentation" : "https://github.com/Caelion/jeedom_eesmart_d2l/wiki/Présentation",
 	"link" : {
 		"forum":"Lien vers le forum",
 		"video" : "Lien vers une video"

@@ -405,6 +405,78 @@ class eesmart extends eqLogic {
       	$info->setDisplay('showStatsOnview','0');
       	$info->setDisplay('showStatsOnmobile','0');
 		$info->save();
+
+		$info = $this->getCmd(null, 'puissance');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Puissance totale', __FILE__));
+		}
+		$info->setUnite('W');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('puissance');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setTemplate('dashboard','badge');
+      	$info->setDisplay('showStatsOndashboard','0');
+      	$info->setDisplay('showStatsOnplan','0');
+      	$info->setDisplay('showStatsOnview','0');
+      	$info->setDisplay('showStatsOnmobile','0');
+		$info->save();
+
+		$info = $this->getCmd(null, 'puissance1');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Puissance - Phase 1', __FILE__));
+		}
+		$info->setUnite('W');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('puissance1');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setTemplate('dashboard','badge');
+      	$info->setDisplay('showStatsOndashboard','0');
+      	$info->setDisplay('showStatsOnplan','0');
+      	$info->setDisplay('showStatsOnview','0');
+      	$info->setDisplay('showStatsOnmobile','0');
+		$info->save();
+
+      	$info = $this->getCmd(null, 'puissance2');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Puissance - Phase 2', __FILE__));
+		}
+		$info->setUnite('W');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('puissance2');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setTemplate('dashboard','badge');
+      	$info->setDisplay('showStatsOndashboard','0');
+      	$info->setDisplay('showStatsOnplan','0');
+      	$info->setDisplay('showStatsOnview','0');
+      	$info->setDisplay('showStatsOnmobile','0');
+		$info->save();
+
+		$info = $this->getCmd(null, 'puissance3');
+		if (!is_object($info)) {
+			$info = new eesmartCmd();
+			$info->setName(__('Puissance - Phase 3', __FILE__));
+		}
+		$info->setUnite('W');
+		$info->setIsHistorized(true);
+		$info->setLogicalId('puissance3');
+		$info->setEqLogic_id($this->getId());
+		$info->setType('info');
+		$info->setSubType('numeric');
+		$info->setTemplate('dashboard','badge');
+      	$info->setDisplay('showStatsOndashboard','0');
+      	$info->setDisplay('showStatsOnplan','0');
+      	$info->setDisplay('showStatsOnview','0');
+      	$info->setDisplay('showStatsOnmobile','0');
+		$info->save();
     }
 
     public function preUpdate() {
@@ -654,6 +726,10 @@ class eesmartCmd extends cmd {
             $eqlogic->checkAndUpdateCmd('intensite2', $info['iinst2']);
             $eqlogic->checkAndUpdateCmd('intensite3', $info['iinst3']);
             $eqlogic->checkAndUpdateCmd('horlogeintensite', $info['horloge']);
+            $eqlogic->checkAndUpdateCmd('puissance', ($info['iinst1']+$info['iinst2']+$info['iinst3'])*230);
+            $eqlogic->checkAndUpdateCmd('puissance1', $info['iinst1']*230);
+            $eqlogic->checkAndUpdateCmd('puissance2', $info['iinst2']*230);
+            $eqlogic->checkAndUpdateCmd('puissance3', $info['iinst3']*230);
 			break;
 		}
     }

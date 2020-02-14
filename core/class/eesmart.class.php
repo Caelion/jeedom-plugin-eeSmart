@@ -541,43 +541,43 @@ class eesmart extends eqLogic {
 		if ($typecontrat != '' && $typecontrat != 'none') {
 			if ($typecontrat != 'Contrat de base') {
 				$info = $this->getCmd(null, 'indexBase');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
             }
 			if ($typecontrat != 'Contrat HCHP') {
 				$info = $this->getCmd(null, 'indexHC');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHP');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
             }
 			if ($typecontrat != 'Contrat EJP') {
 				$info = $this->getCmd(null, 'indexHN');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHPl');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
             }
 			if ($typecontrat != 'Contrat Tempo') {
 				$info = $this->getCmd(null, 'indexHCJB');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHPJB');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHCJW');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHPJW');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHCJR');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
 				$info = $this->getCmd(null, 'indexHPJR');
-				$info->setIsVisible(false);
+				$info->setIsVisible(0);
               	$info->save();
             }
 		}

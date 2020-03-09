@@ -1,4 +1,4 @@
-eeSmart 
+Présentation 
 ===
 
 Plugin développé en partenariat avec la société eeSmart qui distribue les produits D2L.

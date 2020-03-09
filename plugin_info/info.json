@@ -7,8 +7,8 @@
 	"require" : "3.3.39",
 	"version" : "0.3",
 	"category" : "energy",
-	"changelog" : "https://caelion.github.io/jeedom_eesmart_d2l/#language#/changelog",
-	"documentation" : "https://caelion.github.io/jeedom_eesmart_d2l/#language#/",
+	"changelog" : "https://caelion.github.io/jeedom-plugin-eesmart/#language#/changelog",
+	"documentation" : "https://caelion.github.io/jeedom-plugin-eesmart/#language#/",
 	"language" : ["fr_FR","en_US","de_DE","it_IT","sp_SP","ru_RU","id_ID"],
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
 	"hasDependency" : false,

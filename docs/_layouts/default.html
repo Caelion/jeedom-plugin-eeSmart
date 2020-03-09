@@ -84,13 +84,13 @@
 <script type="text/javascript">
   $(document).ready(function() {
    var title = '{{site.github.project_title}}';
+   title = title.replace('jeedom-','');
    title = title.replace('plugin-','');
-   title = title.replace('jeedom_','');
-   $('#doc_title').append(title[0].toUpperCase() + title.substring(1))
-   document.title = 'Documentation Jeedom | '+ title[0].toUpperCase() + title.substring(1)
+   $('#doc_title').append(title)
+   document.title = 'Documentation Jeedom | '+ title
    $(".button-collapse").sideNav();
    $('meta[name=description]').remove();
-   $('head').append( '<meta name="description" content="Ceci est la documentation du plugin "'+ title[0].toUpperCase() + title.substring(1)+'", lier à la solution domotique Jeedom.">' ); 
+   $('head').append( '<meta name="description" content="Ceci est la documentation du plugin "'+ title+'", lier à la solution domotique Jeedom.">' ); 
    $('img').addClass('responsive-img');
    $('#div_content table').addClass('striped');
    init();
@@ -120,7 +120,7 @@
   });
   function init(){
     $('#div_summary2,#div_summary,#div_summary3').empty();
-    var titlePlugin = title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()
+    var titlePlugin = title
     if(window.innerWidth < 992){
       $('#div_main').addClass('container');
       $('#div_content').toc({

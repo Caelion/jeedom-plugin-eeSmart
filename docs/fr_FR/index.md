@@ -20,3 +20,8 @@ Votre seule action sera alors de sélectionner le module correspondant à celui 
 Vous pouvez mettre vos différents modules si vous en avez plusieurs.
 
 L'équipement alors créé se mettra en forme au premier rafraichissement (cron de 5 minutes) pour n'afficher que les index correspondants à ceux liés au contrat.
+
+Info
+===
+La puissance affichée est déterminée par calcul sur la base d'un courant à 230 Volts :
+Puissance théorique : Intensité * 230V (P=UI)

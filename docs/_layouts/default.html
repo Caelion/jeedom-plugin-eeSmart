@@ -85,6 +85,7 @@
   $(document).ready(function() {
    var title = '{{site.github.project_title}}';
    title = title.replace('plugin-','');
+   title = title.replace('jeedom_','');
    $('#doc_title').append(title[0].toUpperCase() + title.substring(1))
    document.title = 'Documentation Jeedom | '+ title[0].toUpperCase() + title.substring(1)
    $(".button-collapse").sideNav();

@@ -5,7 +5,6 @@
 	"licence" : "AGPL",
 	"author" : "Caelion",
 	"require" : "3.3.39",
-	"version" : "0.3",
 	"category" : "energy",
 	"changelog" : "https://caelion.github.io/jeedom-plugin-eesmart/#language#/changelog",
 	"documentation" : "https://caelion.github.io/jeedom-plugin-eesmart/#language#/",

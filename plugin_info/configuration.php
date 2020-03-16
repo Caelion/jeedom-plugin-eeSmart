@@ -40,7 +40,6 @@ if (!isConnect()) {
             <label class="col-lg-4 control-label">{{Clé API}}</label>
             <div class="col-lg-6">
                 <input class="configKey form-control" data-l1key="APIKey" disabled/>
-		<input class="configKey form-control" data-l1key="ValidTo" disabled/>
 <?php
 $_login = trim(config::byKey('identifiant', 'eesmart'));
 $_password = trim(config::byKey('motdepasse', 'eesmart'));
@@ -80,6 +79,12 @@ if ($_login != '' && $_password != ''){
 }
 ?>
 Rafraichir la page pour vérifier la correcte saisie des identifiants.
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4 control-label">{{Date de fin de validité de la clé API}}</label>
+            <div class="col-lg-6">
+		<input class="configKey form-control" data-l1key="ValidTo" disabled/>
             </div>
         </div>
   </fieldset>

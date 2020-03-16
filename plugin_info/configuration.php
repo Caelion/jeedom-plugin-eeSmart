@@ -78,7 +78,6 @@ if ($_login != '' && $_password != ''){
 	}
 }
 ?>
-Rafraichir la page pour vérifier la correcte saisie des identifiants.
             </div>
         </div>
         <div class="form-group">
@@ -87,6 +86,7 @@ Rafraichir la page pour vérifier la correcte saisie des identifiants.
 		<input class="configKey form-control" data-l1key="ValidTo" disabled/>
             </div>
         </div>
+Rafraichir la page pour vérifier la correcte saisie des identifiants.
   </fieldset>
 </form>
 

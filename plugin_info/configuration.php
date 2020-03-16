@@ -39,7 +39,9 @@ if (!isConnect()) {
         <div class="form-group">
             <label class="col-lg-4 control-label">{{Clé API}}</label>
             <div class="col-lg-6">
-                <input class="configKey form-control" data-l1key="APIKey" disabled/><?php
+                <input class="configKey form-control" data-l1key="APIKey" disabled/>
+		<input class="configKey form-control" data-l1key="ValidTo" disabled/>
+<?php
 $_login = trim(config::byKey('identifiant', 'eesmart'));
 $_password = trim(config::byKey('motdepasse', 'eesmart'));
 if ($_login != '' && $_password != ''){
@@ -70,8 +72,10 @@ if ($_login != '' && $_password != ''){
 	$params = json_decode($return,true);
 	if ($params['apiKey'] != "") {
 		config::save('APIKey', $params['apiKey'], 'eesmart');
+		config::save('ValidTo', $params['validTo'], 'eesmart');
 	} else {
     	config::save('APIKey', 'identifiant / mot de passe incorrect(s)', 'eesmart');
+	config::save('ValidTo', 'identifiant / mot de passe incorrect(s)', 'eesmart');
 	}
 }
 ?>

@@ -10,16 +10,21 @@ Configuration
 ===
 
 Une fois le plugin installé, vous devez :
-- Aller dans la page Configuration du plugin et renseigner votre identifiant et votre mot de passe eeSmart
+- Aller dans la page "Configuration" du plugin et renseigner votre identifiant et votre mot de passe eeSmart
 - Sauvegarder
-- Raffraichir la page
-Si les informations saisies sont correctes, le champ "clé API" doit apparaître.
+- Cliquer sur le bouton "Connexion"
+Si les informations saisies sont correctes, un message vous invitant à raffraichir la page apparaît.
 
 Vous pouvez ensuite ajouter un équipement dans le menu habituel.
 Votre seule action sera alors de sélectionner le module correspondant à celui que vous voulez analyser.
 Vous pouvez mettre vos différents modules si vous en avez plusieurs.
 
 L'équipement alors créé se mettra en forme au premier rafraichissement (cron de 5 minutes) pour n'afficher que les index correspondants à ceux liés au contrat.
+
+Fonctionnement
+===
+- Un cron quotidien est  présent pour raffraichir la clé API
+- Un cron à 5 minutes est utilsé pour mettre à jour les informations du compteur.
 
 Info
 ===

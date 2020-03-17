@@ -82,7 +82,7 @@ class eesmart extends eqLogic {
 			return 'Erreur';
 		} else if ($resultat['apiKey'] != '') {
 			config::save('APIKey', $resultat['apiKey'], 'eesmart');
-			config::save('ValidTo', $resultat['validTo'], 'eesmart');
+			config::save('ValidTo', date("d/m/Y - H:i", strtotime($resultat['validTo'])), 'eesmart');
 			return 'OK';
 		}
 	}

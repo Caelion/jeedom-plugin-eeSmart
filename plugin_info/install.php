@@ -17,16 +17,16 @@
 
 require_once dirname(__FILE__) . '/../../../core/php/core.inc.php';
 
-function eesmart2_install() {
+function eesmart_install() {
 
 }
 
-function eesmart2_update() {
+function eesmart_update() {
 
 }
 
 
-function eesmart2_remove() {
+function eesmart_remove() {
 
 }
 ?>

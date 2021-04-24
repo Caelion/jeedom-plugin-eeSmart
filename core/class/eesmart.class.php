@@ -24,7 +24,7 @@ class eesmart extends eqLogic {
 	/* ***********************Methode static*************************** */
 
 	public static function api($action,$Urlspecific,$type) {
-		$_APILoginUrl = 'https://consospyapi.sicame.io/api';
+		$_APILoginUrl = 'https://d2lapi.sicame.io/api';
 		$_login = trim(config::byKey('identifiant', 'eesmart'));
 		$_password = trim(config::byKey('motdepasse', 'eesmart'));
 		$_api = trim(config::byKey('APIKey', 'eesmart'));

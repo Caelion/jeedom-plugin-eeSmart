@@ -87,7 +87,7 @@ class eesmart extends eqLogic {
 		}
 	}
 
-	public function liste_modules() {
+	public static function liste_modules() {
 		/* Paramètres de connexion */
 		$action = 'GET';
 		$Urlspecific = '/D2L/D2Ls';

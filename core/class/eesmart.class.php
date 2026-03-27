@@ -778,7 +778,7 @@ class eesmartCmd extends cmd {
 
 					$info = '';
 					$info = $eqlogic->last_indexes(); // On lance la fonction eesmart_last_indexes() pour récupérer l'api et on la stocke dans la variable $info
-					if (!is_array($info)) {
+					if (is_array($info)) {
 						$eqlogic->checkAndUpdateCmd('indexTotal', ($info['baseHchcEjphnBbrhcjb']+$info['hchpEjphpmBbrhpjb']+$info['bbrhcjw']+$info['bbrhpjw']+$info['bbrhcjr']+$info['bbrhpjr'])/1000); // on met à jour la commande avec le LogicalId "indexTotal" de l'eqlogic
 						$eqlogic->checkAndUpdateCmd('indexBase', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexBase" de l'eqlogic
 						$eqlogic->checkAndUpdateCmd('indexHC', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexHC" de l'eqlogic
@@ -796,7 +796,7 @@ class eesmartCmd extends cmd {
 
 					$info = '';
 					$info = $eqlogic->last_currents(); // On lance la fonction eesmart_last_currents() pour récupérer l'api et on la stocke dans la variable $info
-					if (!is_array($info)) {
+					if (is_array($info)) {
 						$eqlogic->checkAndUpdateCmd('intensite', $info['iinst1']+$info['iinst2']+$info['iinst3']);
 						$eqlogic->checkAndUpdateCmd('intensite1', $info['iinst1']);
 						$eqlogic->checkAndUpdateCmd('intensite2', $info['iinst2']);

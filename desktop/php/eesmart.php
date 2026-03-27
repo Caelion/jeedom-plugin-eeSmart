@@ -123,6 +123,7 @@ if ($_api == ''){
 							<th>{{Nom}}</th>
 							<th>{{Type}}</th>
 							<th>{{Paramètres}}</th>
+							<th>{{Etat}}</th>
 							<th>{{Action}}</th>
 						</tr>
 					</thead>

@@ -45,6 +45,10 @@ function addCmdToTable(_cmd) {
 	tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr" data-l1key="display" data-l2key="invertBinary"/>{{Inverser}}</label></span> ';
 	tr += '</td>';
 
+	tr += '<td>'
+	tr += '<span class="cmdAttr" data-l1key="htmlstate"></span>'
+	tr += '</td>'
+
 	tr += '<td>';
 	if (is_numeric(_cmd.id)) {
 		tr += '<a class="btn btn-default btn-xs cmdAction" data-action="configure"><i class="fa fa-cogs"></i></a> ';
@@ -52,6 +56,7 @@ function addCmdToTable(_cmd) {
 	}
 	tr += '<i class="fa fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i>';
 	tr += '</td>';
+
 	tr += '</tr>';
 	$('#table_cmd tbody').append(tr);
 	$('#table_cmd tbody tr:last').setValues(_cmd, '.cmdAttr');

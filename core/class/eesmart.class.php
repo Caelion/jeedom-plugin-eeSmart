@@ -778,31 +778,35 @@ class eesmartCmd extends cmd {
 
 					$info = '';
 					$info = $eqlogic->last_indexes(); // On lance la fonction eesmart_last_indexes() pour récupérer l'api et on la stocke dans la variable $info
-					$eqlogic->checkAndUpdateCmd('indexTotal', ($info['baseHchcEjphnBbrhcjb']+$info['hchpEjphpmBbrhpjb']+$info['bbrhcjw']+$info['bbrhpjw']+$info['bbrhcjr']+$info['bbrhpjr'])/1000); // on met à jour la commande avec le LogicalId "indexTotal" de l'eqlogic
-					$eqlogic->checkAndUpdateCmd('indexBase', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexBase" de l'eqlogic
-					$eqlogic->checkAndUpdateCmd('indexHC', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexHC" de l'eqlogic
-					$eqlogic->checkAndUpdateCmd('indexHP', $info['hchpEjphpmBbrhpjb']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHN', $info['baseHchcEjphnBbrhcjb']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHPl', $info['hchpEjphpmBbrhpjb']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHCJB', $info['baseHchcEjphnBbrhcjb']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHPJB', $info['hchpEjphpmBbrhpjb']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHCJW', $info['bbrhcjw']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHPJW', $info['bbrhpjw']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHCJR', $info['bbrhcjr']/1000);
-					$eqlogic->checkAndUpdateCmd('indexHPJR', $info['bbrhpjr']/1000);
-					$eqlogic->checkAndUpdateCmd('horlogeindex', $info['horloge']);
+					if (!is_array($info)) {
+						$eqlogic->checkAndUpdateCmd('indexTotal', ($info['baseHchcEjphnBbrhcjb']+$info['hchpEjphpmBbrhpjb']+$info['bbrhcjw']+$info['bbrhpjw']+$info['bbrhcjr']+$info['bbrhpjr'])/1000); // on met à jour la commande avec le LogicalId "indexTotal" de l'eqlogic
+						$eqlogic->checkAndUpdateCmd('indexBase', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexBase" de l'eqlogic
+						$eqlogic->checkAndUpdateCmd('indexHC', $info['baseHchcEjphnBbrhcjb']/1000); // on met à jour la commande avec le LogicalId "indexHC" de l'eqlogic
+						$eqlogic->checkAndUpdateCmd('indexHP', $info['hchpEjphpmBbrhpjb']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHN', $info['baseHchcEjphnBbrhcjb']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHPl', $info['hchpEjphpmBbrhpjb']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHCJB', $info['baseHchcEjphnBbrhcjb']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHPJB', $info['hchpEjphpmBbrhpjb']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHCJW', $info['bbrhcjw']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHPJW', $info['bbrhpjw']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHCJR', $info['bbrhcjr']/1000);
+						$eqlogic->checkAndUpdateCmd('indexHPJR', $info['bbrhpjr']/1000);
+						$eqlogic->checkAndUpdateCmd('horlogeindex', $info['horloge']);
+					}
 
 					$info = '';
 					$info = $eqlogic->last_currents(); // On lance la fonction eesmart_last_currents() pour récupérer l'api et on la stocke dans la variable $info
-					$eqlogic->checkAndUpdateCmd('intensite', $info['iinst1']+$info['iinst2']+$info['iinst3']);
-					$eqlogic->checkAndUpdateCmd('intensite1', $info['iinst1']);
-					$eqlogic->checkAndUpdateCmd('intensite2', $info['iinst2']);
-					$eqlogic->checkAndUpdateCmd('intensite3', $info['iinst3']);
-					$eqlogic->checkAndUpdateCmd('horlogeintensite', $info['horloge']);
-					$eqlogic->checkAndUpdateCmd('puissance', ($info['iinst1']+$info['iinst2']+$info['iinst3'])*230);
-					$eqlogic->checkAndUpdateCmd('puissance1', $info['iinst1']*230);
-					$eqlogic->checkAndUpdateCmd('puissance2', $info['iinst2']*230);
-					$eqlogic->checkAndUpdateCmd('puissance3', $info['iinst3']*230);
+					if (!is_array($info)) {
+						$eqlogic->checkAndUpdateCmd('intensite', $info['iinst1']+$info['iinst2']+$info['iinst3']);
+						$eqlogic->checkAndUpdateCmd('intensite1', $info['iinst1']);
+						$eqlogic->checkAndUpdateCmd('intensite2', $info['iinst2']);
+						$eqlogic->checkAndUpdateCmd('intensite3', $info['iinst3']);
+						$eqlogic->checkAndUpdateCmd('horlogeintensite', $info['horloge']);
+						$eqlogic->checkAndUpdateCmd('puissance', ($info['iinst1']+$info['iinst2']+$info['iinst3'])*230);
+						$eqlogic->checkAndUpdateCmd('puissance1', $info['iinst1']*230);
+						$eqlogic->checkAndUpdateCmd('puissance2', $info['iinst2']*230);
+						$eqlogic->checkAndUpdateCmd('puissance3', $info['iinst3']*230);
+					}
 				}
 			break;
 		}

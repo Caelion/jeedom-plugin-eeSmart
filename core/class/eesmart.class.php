@@ -92,11 +92,12 @@ class eesmart extends eqLogic {
 		$action = 'GET';
 		$Urlspecific = '/D2L/D2Ls';
 		$type = 'api';
+		$resultat = eesmart::api($action,$Urlspecific,$type);
 		/* API */
 		if ($resultat == 'Erreur') {
 			message::add('eeSmart','Connexion impossible vià l\'API : clé API non valide');
+			return 'Erreur';
 		} else {
-			$resultat = eesmart::api($action,$Urlspecific,$type);
 			return $resultat;
 		}
 	}
@@ -211,11 +212,12 @@ class eesmart extends eqLogic {
 		$action = 'GET';
 		$Urlspecific = '/D2L/D2Ls/'.$_idmodule.'/LastIndexes';
 		$type = 'api';
+		$resultat = eesmart::api($action,$Urlspecific,$type);
 		/* API */
 		if ($resultat == 'Erreur') {
 			message::add('eeSmart','Connexion impossible vià l\'API : clé API non valide');
+			return 'Erreur';
 		} else {
-			$resultat = eesmart::api($action,$Urlspecific,$type);
 			return $resultat;
 		}
 	}
@@ -226,11 +228,12 @@ class eesmart extends eqLogic {
 		$action = 'GET';
 		$Urlspecific = '/D2L/D2Ls/'.$_idmodule.'/LastCurrents';
 		$type = 'api';
+		$resultat = eesmart::api($action,$Urlspecific,$type);
 		/* API */
 		if ($resultat == 'Erreur') {
 			message::add('eeSmart','Connexion impossible vià l\'API : clé API non valide');
+			return 'Erreur';
 		} else {
-			$resultat = eesmart::api($action,$Urlspecific,$type);
 			return $resultat;
 		}
 	}

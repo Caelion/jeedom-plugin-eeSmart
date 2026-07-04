@@ -285,7 +285,7 @@ class eesmart extends eqLogic {
 
 	public function postSave() {
 		//log::add('eesmart', 'debug', 'Exécution de la fonction postSave');
-
+		$order = 0;
 		//Création des commandes
 		$refresh = $this->getCmd(null, 'refresh');
 		if (!is_object($refresh)) {
